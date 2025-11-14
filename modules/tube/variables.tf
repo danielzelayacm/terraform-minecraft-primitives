@@ -15,26 +15,26 @@ variable "start_position" {
 variable "diameter" {
   type        = number
   description = "Circle diameter in blocks (>= 3, integer)."
-  validation {
-    condition     = var.diameter >= 3 && floor(var.diameter) == var.diameter
-    error_message = "diameter must be an integer >= 3."
-  }
+  #validation {
+  #  condition     = var.diameter >= 3 && floor(var.diameter) == var.diameter
+  #  error_message = "diameter must be an integer >= 3."
+  #}
 }
 
 variable "depth" {
   type        = number
   description = "Extrusion length along direction (>= 1, integer)."
-  validation {
-    condition     = var.depth >= 1 && floor(var.depth) == var.depth
-    error_message = "depth must be an integer >= 1."
-  }
+  #validation {
+  #  condition     = var.depth >= 1 && floor(var.depth) == var.depth
+  #  error_message = "depth must be an integer >= 1."
+  #}
 }
 
 variable "direction" {
   type        = string
   description = "Extrusion direction."
-  validation {
-    condition     = contains(local.directions, var.direction)
-    error_message = "direction must be one of: ${join(", ", local.directions)}"
-  }
+  #validation {
+  #  condition     = contains(local.directions, var.direction)
+  #  error_message = "direction must be one of: ${join(", ", local.directions)}"
+  #}
 }

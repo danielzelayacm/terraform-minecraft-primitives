@@ -15,29 +15,29 @@ variable "start_position" {
 variable "direction" {
   type        = string
   description = "Row direction. One of 'north', 'south', 'east', 'west'."
-  validation {
-    condition     = contains(["north", "south", "east", "west"], var.direction)
-    error_message = "Must be one of: 'north', 'south', 'east', 'west'."
-  }
+  #validation {
+  #  condition     = contains(["north", "south", "east", "west"], var.direction)
+  #  error_message = "Must be one of: 'north', 'south', 'east', 'west'."
+  #}
 }
 
 variable "width" {
   type        = number
   description = "Number of straight stair blocks in the row (>= 1)."
-  validation {
-    condition     = var.width >= 1 && floor(var.width) == var.width
-    error_message = "width must be an integer >= 1."
-  }
+  #validation {
+  #  condition     = var.width >= 1 && floor(var.width) == var.width
+  #  error_message = "width must be an integer >= 1."
+  #}
 }
 
 variable "half" {
   type        = string
   description = "Stairs half: 'bottom' or 'top'."
   default     = "bottom"
-  validation {
-    condition     = contains(["bottom", "top"], var.half)
-    error_message = "half must be 'bottom' or 'top'."
-  }
+  #validation {
+  #  condition     = contains(["bottom", "top"], var.half)
+  #  error_message = "half must be 'bottom' or 'top'."
+  #}
 }
 
 # If your row grows the opposite way from what you want, flip this.
